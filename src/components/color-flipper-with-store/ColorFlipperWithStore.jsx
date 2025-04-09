@@ -1,5 +1,13 @@
 import { useRef, useState } from "react";
 
+function isValidColor(strColor) {
+  var s = new Option().style;
+  s.color = strColor;
+
+  // return 'false' if color wasn't assigned
+  return s.color == strColor.toLowerCase();
+}
+
 const ColorFlipperWithStore = () => {
   const inputflip = useRef();
   const [colors, setColors] = useState([]);
@@ -17,6 +25,10 @@ const ColorFlipperWithStore = () => {
             return;
           }
 
+          if (!isValidColor(color)) {
+            return;
+          }
+
           setColors((oldColors) => {
             return [color, ...oldColors];
           });
@@ -29,6 +41,7 @@ const ColorFlipperWithStore = () => {
         {colors?.map((color) => {
           return (
             <button
+              key={color}
               onClick={() => {
                 document.body.style.backgroundColor = color;
               }}
