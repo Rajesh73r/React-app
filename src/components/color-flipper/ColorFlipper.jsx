@@ -19,7 +19,7 @@ const ColorFlipper = () => {
             onClick={() => {
               document.body.style.backgroundColor = color;
             }}
-            style={{ backgroundColor: color }}
+            style={{ backgroundColor: color, margin: "5px" }}
           >
             {color}
           </button>
