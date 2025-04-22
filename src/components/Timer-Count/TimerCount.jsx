@@ -1,9 +1,10 @@
 import { useEffect, useRef, useState } from "react";
 
-const StopWatch = () => {
+const TimerCount = () => {
   const [time, setTime] = useState(0);
   const [state, setState] = useState("reset");
   const refId = useRef(null);
+  const inputRef = useRef(null);
 
   useEffect(() => {
     return () => {
@@ -14,7 +15,7 @@ const StopWatch = () => {
   useEffect(() => {
     if (state == "start") {
       refId.current = setInterval(() => {
-        setTime((time) => time + 1);
+        setTime((time) => time - 1);
       }, 1000);
     } else if (state == "stop") {
       clearInterval(refId.current);
@@ -23,6 +24,13 @@ const StopWatch = () => {
       setTime(0);
     }
   }, [state]);
+
+  useEffect(() => {
+    if (time <= 0) {
+      clearInterval(refId.current);
+      setTime(0);
+    }
+  }, [time]);
 
   return (
     <div>
@@ -34,8 +42,11 @@ const StopWatch = () => {
         <span>{Math.floor(time % 60)}</span>
       </div>
       <div>
+        <input ref={inputRef} type="number" min={0} />
+
         <button
           onClick={() => {
+            setTime(inputRef.current.value);
             setState("start");
           }}
         >
@@ -51,6 +62,7 @@ const StopWatch = () => {
         <button
           onClick={() => {
             setState("reset");
+            inputRef.current.value = 0;
           }}
         >
           Reset
@@ -60,4 +72,4 @@ const StopWatch = () => {
   );
 };
 
-export default StopWatch;
+export default TimerCount;
