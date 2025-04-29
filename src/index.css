@@ -12,7 +12,19 @@
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
-
+nav {
+  display: flex;
+  justify-content: space-between;
+  height: 70px;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+ ul {
+  display: flex;
+  list-style: none;
+  gap: 24px;
+  list-style: none;
+}
 a {
   font-weight: 500;
   color: #646cff;
@@ -33,11 +45,11 @@ main {
   width: 100%;
 }
 
-nav {
+/* nav {
   padding: .5rem;
   margin-bottom: .25rem;
   background-color: #242424;
-}
+} */
 
 h1 {
   font-size: 3.2em;

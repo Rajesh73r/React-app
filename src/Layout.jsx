@@ -1,4 +1,5 @@
 import { Link, Outlet } from "react-router-dom";
+import { Toaster } from "sonner";
 
 const Layout = () => {
   return (
@@ -7,6 +8,7 @@ const Layout = () => {
         <Link to="/">Home</Link>
       </nav>
       <Outlet />
+      <Toaster />
     </main>
   );
 };

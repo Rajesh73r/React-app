@@ -1,8 +1,11 @@
+
+import BrandWebpage from "./components/Brand-webpage/Brand-web";
 import ColorFlipperWithStore from "./components/color-flipper-with-store/ColorFlipperWithStore";
 import ColorFlipper from "./components/color-flipper/ColorFlipper";
 import InputUser from "./components/input-user/InputUser";
 import StopWatch from "./components/Stop-Watch/StopWatch";
 import TimerCount from "./components/Timer-Count/TimerCount";
+import TodoList from "./components/Todo-list/Todo-list";
 
 const routes = [
     {
@@ -29,6 +32,16 @@ const routes = [
         title:"InputUser",
         path:"/InputUser",
         Element: InputUser
+    },
+    {
+        title:"BrandWebpage",
+        path:"/BrandWebpage",
+        Element: BrandWebpage
+    },
+    {
+        title: "TodoList",
+        path:"/TodoList",
+        Element: TodoList
     }
 ]
 
