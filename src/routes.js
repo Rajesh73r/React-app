@@ -1,5 +1,5 @@
 
-import BrandWebpage from "./components/Brand-webpage/BrandWeb";
+import BrandWebpage from "./components/Brand-Webpage/BrandWeb";
 import ColorFlipperWithStore from "./components/color-flipper-with-store/ColorFlipperWithStore";
 import ColorFlipper from "./components/color-flipper/ColorFlipper";
 import InputUser from "./components/input-user/InputUser";
